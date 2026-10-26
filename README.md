@@ -72,8 +72,8 @@ Code: MIT (see `LICENSE`). Data: Tianchi and RJDB terms apply; not redistributed
 
 ```bibtex
 @inproceedings{mita2027pjf,
-   title     = {Learned but Not Transferred: Objective Modifications and Evaluation Choices in Frozen-Encoder {Person--Job} Fit},
-  author    = {Lei Bu and Hong Pan and Xiaoqiang Di\textsuperscript{*}},
+   title={Learned but Not Transferred: Objective Modifications and Evaluation Choices in Frozen-Encoder {Person--Job} Fit},
+  author={Lei Bu and Hong Pan and Xiaoqiang Di\textsuperscript{*}},
   year={2027},
   booktitle={MiTA}
 }
