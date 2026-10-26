@@ -1,0 +1,20 @@
+{
+  "OVERLAP_V1": {
+    "path": "OVERLAP_V1_split_manifest.json",
+    "sha256": "8a3f79ecb4f3ea7131358c8021efe8ab38e08f662b8559bdd5c24e5382605d26"
+  },
+  "E2_USER_2027": "d9d717cead0a8b651cc980107a791db5551482d7cf4b63656a7d4cd72855638a",
+  "E2_JOB_2028": "324bdf9645770e880d7128a5d2a7481c17e122cd138cf1197990c3181e612ad5",
+  "E2_USER_2027_manifest": {
+    "path": "split_manifest.json",
+    "sha256": "d9d717cead0a8b651cc980107a791db5551482d7cf4b63656a7d4cd72855638a"
+  },
+  "E2_JOB_2028_manifest": {
+    "path": "split_manifest.json",
+    "sha256": "324bdf9645770e880d7128a5d2a7481c17e122cd138cf1197990c3181e612ad5"
+  },
+  "OVERLAP_V1_manifest": {
+    "path": "OVERLAP_V1_split_manifest.json",
+    "sha256": "8a3f79ecb4f3ea7131358c8021efe8ab38e08f662b8559bdd5c24e5382605d26"
+  }
+}

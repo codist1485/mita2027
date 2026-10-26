@@ -1,0 +1,12 @@
+{
+  "split_protocol": "SPLIT_PROTOCOL_OVERLAP_V1",
+  "train_sha256": "22c287c08dbd8c703dd17acb947fa9fec7251f7f349ccb853b773c0c9c1fc98b",
+  "val_sha256": "8446be2178646a60ebbec763da5b215a9be22e672762019ab09b2677398938c9",
+  "internal_test_sha256": "78e622987eb7e1b4fd06f2423f979f99c469cdb329a7703fa8c9eb42f4165ffb",
+  "entity_id_fields": [
+    "user_id",
+    "jd_no",
+    "satisfied"
+  ],
+  "note": "Sidecar for TCORE; pair CSVs remain Phase1 frozen files under data/phase1/splits/"
+}

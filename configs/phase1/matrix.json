@@ -1,0 +1,85 @@
+{
+  "protocol": "phase1_independent_eval_v1",
+  "split_seed": 42,
+  "train_seeds": [42, 123, 456],
+  "encoder_cache": "paraphrase-multilingual-MiniLM-L12-v2 L2-normalized",
+  "match_head": "TextMatchHead concat([u,j,u*j,|u-j|]) -> 128 -> 64 -> 1",
+  "max_epochs": 10,
+  "batch_size": 512,
+  "learning_rate": 0.001,
+  "optimizer": "Adam",
+  "selection_metric": "val_auc",
+  "early_stopping_patience": 3,
+  "contrastive_per_batch": 64,
+  "contrastive_margin": 1.0,
+  "focal_gamma": 2.0,
+  "official_rank_eval_default": false,
+  "weight_normalization_note": "quality_weighted_bce uses sum(w*bce)/sum(w); no second renormalization",
+  "lambda_selection": {
+    "candidates": [0.0, 0.01, 0.05, 0.1],
+    "metric": "val_auc",
+    "forbidden_metrics": ["official_rank_*", "internal_test_*"],
+    "share_lambda_across_A4_A5": false,
+    "rule": "Choose lambda separately for A4 and A5 by mean validation AUC over seeds 42/123/456. Ties: prefer smaller lambda. Freeze chosen lambdas in matrix.json before any internal_test read.",
+    "budget": "For each of A4/A5 and each candidate lambda, run the same max_epochs/early-stopping protocol on all three train seeds. No extra epochs beyond the shared matrix budget.",
+    "when_internal_test_allowed": "Only after A0-A5 and S1/S2 are frozen (including chosen lambdas) and written to results/phase1/frozen_config.json",
+    "provisional_default_in_matrix": 0.05,
+    "status": "protocol_frozen_search_not_run"
+  },
+  "experiments": {
+    "A0": {
+      "name": "uniform_bce",
+      "supervised_loss": "uniform_bce",
+      "lambda_contrastive": 0.0,
+      "model": "text_match_head"
+    },
+    "A1": {
+      "name": "forward_quality",
+      "supervised_loss": "forward_quality_bce",
+      "lambda_contrastive": 0.0,
+      "model": "text_match_head",
+      "quality_strategy": "baseline"
+    },
+    "A2": {
+      "name": "reverse_quality",
+      "supervised_loss": "reverse_quality_bce",
+      "lambda_contrastive": 0.0,
+      "model": "text_match_head",
+      "quality_strategy": "reverse"
+    },
+    "A3": {
+      "name": "focal",
+      "supervised_loss": "focal_bce",
+      "lambda_contrastive": 0.0,
+      "model": "text_match_head",
+      "focal_gamma": 2.0
+    },
+    "A4": {
+      "name": "uniform_bce_contrastive",
+      "supervised_loss": "uniform_bce",
+      "lambda_contrastive": 0.05,
+      "model": "text_match_head",
+      "lambda_selection": "must be chosen on validation AUC only; 0.05 is a provisional default, not test-tuned"
+    },
+    "A5": {
+      "name": "reverse_quality_contrastive",
+      "supervised_loss": "reverse_quality_bce",
+      "lambda_contrastive": 0.05,
+      "model": "text_match_head",
+      "quality_strategy": "reverse",
+      "lambda_selection": "must be chosen on validation AUC only; 0.05 is a provisional default, not test-tuned"
+    },
+    "S1": {
+      "name": "minilm_cosine",
+      "model": "cosine",
+      "trainable": false,
+      "equivalence": "identical to S2 under L2-normalized caches"
+    },
+    "S2": {
+      "name": "minilm_dot",
+      "model": "dot",
+      "trainable": false,
+      "equivalence": "identical to S1 under L2-normalized caches"
+    }
+  }
+}

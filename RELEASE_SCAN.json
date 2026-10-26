@@ -1,0 +1,90 @@
+{
+  "hits": [
+    {
+      "file": "src\\models\\structured_mlp.py",
+      "pattern": "token",
+      "line": 93,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\models\\structured_mlp.py",
+      "pattern": "token",
+      "line": 93,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\models\\structured_mlp.py",
+      "pattern": "token",
+      "line": 93,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\models\\structured_mlp.py",
+      "pattern": "token",
+      "line": 94,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\models\\structured_mlp.py",
+      "pattern": "token",
+      "line": 94,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\models\\structured_mlp.py",
+      "pattern": "token",
+      "line": 99,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\models\\structured_mlp.py",
+      "pattern": "token",
+      "line": 100,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\models\\structured_mlp.py",
+      "pattern": "token",
+      "line": 100,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\phase1\\quality_train_only.py",
+      "pattern": "token",
+      "line": 124,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\phase1\\quality_train_only.py",
+      "pattern": "token",
+      "line": 125,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\phase1\\quality_train_only.py",
+      "pattern": "token",
+      "line": 125,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\phase1\\quality_train_only.py",
+      "pattern": "token",
+      "line": 126,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\phase1\\quality_train_only.py",
+      "pattern": "token",
+      "line": 129,
+      "snippet": "token"
+    },
+    {
+      "file": "src\\phase1\\quality_train_only.py",
+      "pattern": "token",
+      "line": 132,
+      "snippet": "token"
+    }
+  ],
+  "large_files": [],
+  "dataish_files": []
+}
