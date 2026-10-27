@@ -80,7 +80,7 @@ Code: MIT (see `LICENSE`). Data: Tianchi and RJDB terms apply; not redistributed
 ```bibtex
 @inproceedings{mita2027pjf,
   title={Learned but Not Transferred: Objective Modifications and Evaluation Choices in Frozen-Encoder Person--Job Fit},
-  author={XX1 and XX2 and XX3},
+  author={Lei Bu and Hong Pan and Xiaoqiang Di},
   year={2027},
   booktitle={MiTA}
 }
