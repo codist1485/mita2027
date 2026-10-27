@@ -243,6 +243,13 @@ def parse_args(argv: list[str] | None = None):
         default=None,
         help="optional path to job_quality_trainfit CSV (default: data/phase1/quality/job_quality_trainfit_v1.csv)",
     )
+    parser.add_argument(
+        "--quality-score-column",
+        type=str,
+        default="quality_score_trainfit",
+        help="column in quality CSV used as q for reverse/baseline weights "
+        "(default quality_score_trainfit; addendum d: text_length_score_trainfit)",
+    )
     args = parser.parse_args(argv)
     if args.early_stopping_patience is not None and args.early_stopping_patience < 1:
         raise SystemExit(
@@ -389,7 +396,7 @@ def main() -> None:
     user_emb = user_payload["embeddings"].float()
     job_emb = job_payload["embeddings"].float()
     user_emb, job_emb = place_frozen_embeddings(user_emb, job_emb, device, resident=resident)
-    quality_map = load_trainfit_quality_map(args.quality_csv)
+    quality_map = load_trainfit_quality_map(args.quality_csv, column=args.quality_score_column)
     user_row, job_row = build_index_tables(user_ids, job_ids)
 
     split_dir = binding.train_path.parent
@@ -564,6 +571,7 @@ def main() -> None:
         "lambda_contrastive_effective": lambda_c,
         "lambda_override": lambda_override,
         "reverse_weight_kappa": args.reverse_weight_kappa,
+        "quality_score_column": args.quality_score_column,
         "max_epochs": max_epochs,
         "selection_metric": "val_auc",
     }

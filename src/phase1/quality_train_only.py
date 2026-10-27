@@ -213,12 +213,23 @@ def build_train_only_quality(job_path: Path = JOB_V2_PATH) -> dict:
     return stats
 
 
-def load_trainfit_quality_map(path: Path | str | None = None) -> dict[str, float]:
+def load_trainfit_quality_map(
+    path: Path | str | None = None,
+    column: str = "quality_score_trainfit",
+) -> dict[str, float]:
+    """Load per-job quality scores from the train-fit CSV.
+
+    ``column`` selects which score drives weighting. Default is the composite
+    ``quality_score_trainfit``. Addendum d uses ``text_length_score_trainfit``
+    (same CSV / same length fit: p05=248, p95=845). Missing rows / NaNs map to 0.5.
+    """
     path = Path(path) if path is not None else (QUALITY_DIR / "job_quality_trainfit_v1.csv")
     if not path.is_file():
         raise FileNotFoundError(path)
     frame = pd.read_csv(path, dtype=str, keep_default_na=False)
-    scores = pd.to_numeric(frame["quality_score_trainfit"], errors="coerce").fillna(0.5).clip(0.0, 1.0)
+    if column not in frame.columns:
+        raise KeyError(f"quality CSV missing column {column!r}; have {list(frame.columns)}")
+    scores = pd.to_numeric(frame[column], errors="coerce").fillna(0.5).clip(0.0, 1.0)
     return {job_id: float(score) for job_id, score in zip(frame["jd_no"], scores)}
 
 

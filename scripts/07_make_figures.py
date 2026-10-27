@@ -15,10 +15,51 @@ def main():
     # dose panel
     fig, axes = plt.subplots(1, 2, figsize=(3.7, 1.9), sharey=True)
     ks = [1, 2, 4]
-    ys = [effects["DR"][f"kappa_{k}"]["est"] * 1e3 for k in ks]
-    lo = [(effects["DR"][f"kappa_{k}"]["est"] - effects["DR"][f"kappa_{k}"]["lo"]) * 1e3 for k in ks]
-    hi = [(effects["DR"][f"kappa_{k}"]["hi"] - effects["DR"][f"kappa_{k}"]["est"]) * 1e3 for k in ks]
-    axes[0].errorbar(ks, ys, yerr=[lo, hi], fmt="o-", color="black", markersize=3.5, capsize=2.5)
+    off = 0.08
+    leng = effects.get("v3", {}).get("length_only")
+    series = [
+        (
+            "composite $q$",
+            {
+                1: effects["DR"]["kappa_1"],
+                2: effects["DR"]["kappa_2"],
+                4: effects["DR"]["kappa_4"],
+            },
+            "o",
+            True,
+            -off,
+        )
+    ]
+    if leng:
+        series.append(
+            (
+                "length-only",
+                {1: leng["kappa_1"], 2: leng["kappa_2"], 4: leng["kappa_4"]},
+                "s",
+                False,
+                +off,
+            )
+        )
+    for label, dd, mk, fill, dx in series:
+        x = [k + dx for k in ks]
+        y = [dd[k]["est"] * 1e3 for k in ks]
+        lo = [(dd[k]["est"] - dd[k]["lo"]) * 1e3 for k in ks]
+        hi = [(dd[k]["hi"] - dd[k]["est"]) * 1e3 for k in ks]
+        axes[0].errorbar(
+            x,
+            y,
+            yerr=[lo, hi],
+            fmt="-",
+            color="black",
+            lw=0.9,
+            capsize=2.5,
+            markersize=3.5,
+            marker=mk,
+            mfc=("black" if fill else "white"),
+            mec="black",
+            label=label,
+        )
+    axes[0].legend(loc="lower left", fontsize=6, frameon=False)
     axes[0].axhline(0, color="0.5", ls="--", lw=0.8)
     axes[0].set_xlabel(r"$\kappa$"); axes[0].set_ylabel(r"$\Delta$AUC ($\times 10^{-3}$)")
     lams = [0.05, 0.5, 2.0]

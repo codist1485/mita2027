@@ -26,5 +26,12 @@ for cell in wk2 wk4 tl05 tl2; do
   done
 done
 
+# Length-only DR (addendum d): κ∈{1,2,4}, seeds 1001–1005
+for cell in lk1 lk2 lk4; do
+  for s in $(seq 1001 1005); do
+    $PY scripts/04_train.py --cell "$cell" --seed "$s" --max-epochs 100 --patience 10 --output-root "$OUT/len"
+  done
+done
+
 echo "E2 user/job-disjoint runs: use --split-protocol flags documented in README (20+20 runs)."
 echo "Then: $PY scripts/06_analyze.py && $PY scripts/07_make_figures.py"

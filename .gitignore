@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+data/
+*.pt
+*.npy
+*.parquet
+wandb/
+mlruns/
+.DS_Store

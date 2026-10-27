@@ -53,16 +53,23 @@ Smoke test (no external data): `python scripts/smoke_test.py`
 | Manipulation check | MC scoring + job-cluster bootstrap | `results/mc_accuracy.csv`, `\\MCT` in `results_macros_v2.tex` |
 | Quality subgroups (SG) | SG analysis | SG macros in `results_macros_v2.tex` |
 | All numeric effects (6 d.p.) | — | `results/effects_summary.json` |
+| v3 AP / Bonferroni / slopes | addendum c analysis | `results/results_macros_v3.tex` |
+| Length-only dose (κ=1,2,4) | addendum d runs | `results/results_macros_v3d.tex`, `results/len_run_inventory.csv` |
+| Post-hoc user-macro budget gap | — | `\\MacroBudgetGap` in `results_macros_v3.tex` |
 
 ## Pre-registration
 
 - `prereg/PREREG_2026-10-26.md` — primary E4/E1/E2 plan  
 - `prereg/PREREG_ADDENDUM_2026-10-26b.md` — MC / DR / SG addendum  
+- `prereg/PREREG_ADDENDUM_2026-10-27c.md` — short-budget 10-seed table, AP factorial effects, DR Bonferroni / slopes (post hoc re-analysis)  
+- `prereg/PREREG_ADDENDUM_2026-10-27d.md` — length-only reverse reweighting dose grid (before L-κ runs)  
 
 In the original research repository these were committed as:
 
 - freeze / v1 manuscript: `9d344289370e684ce39621cdf2aa29c31de9237f`
 - addendum + paper_v2 scaffold (before MC/DR/SG runs): `b04a5dc03e4637a60821c1b00f1e678821bab96c`
+- addendum c (before v3 re-analyses): `1bf856140d9be6f257bbff1152b0cf729ee2a2db`
+- addendum d (before length-only runs): `d9dae5cbdd950f5b6f18c260ae03d7943c40e338`
 
 ## License
 
@@ -72,8 +79,8 @@ Code: MIT (see `LICENSE`). Data: Tianchi and RJDB terms apply; not redistributed
 
 ```bibtex
 @inproceedings{mita2027pjf,
-   title={Learned but Not Transferred: Objective Modifications and Evaluation Choices in Frozen-Encoder {Person--Job} Fit},
-  author={Lei Bu and Hong Pan and Xiaoqiang Di\textsuperscript{*}},
+  title={Learned but Not Transferred: Objective Modifications and Evaluation Choices in Frozen-Encoder Person--Job Fit},
+  author={XX1 and XX2 and XX3},
   year={2027},
   booktitle={MiTA}
 }

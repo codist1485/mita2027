@@ -7,7 +7,7 @@ import sys
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cell", choices=["base", "w", "t", "wt", "wk2", "wk4", "tl05", "tl2"], required=True)
+    ap.add_argument("--cell", choices=["base", "w", "t", "wt", "wk2", "wk4", "tl05", "tl2", "lk1", "lk2", "lk4"], required=True)
     ap.add_argument("--seed", type=int, required=True)
     ap.add_argument("--max-epochs", type=int, default=100)
     ap.add_argument("--patience", type=int, default=10)
@@ -25,6 +25,15 @@ def main():
         cmd += ["--lambda-contrastive", str(lam)]
     if args.cell.startswith("wk"):
         cmd += ["--reverse-weight-kappa", args.cell[2:]]
+    if args.cell.startswith("lk"):
+        cmd += [
+            "--experiment",
+            "A2",
+            "--reverse-weight-kappa",
+            args.cell[2:],
+            "--quality-score-column",
+            "text_length_score_trainfit",
+        ]
     cmd += extra
     print(" ".join(cmd))
     raise SystemExit(subprocess.call(cmd))
