@@ -1,22 +1,25 @@
 cff-version: 1.2.0
 message: If you use this software, please cite the paper.
-title: "Learned but Not Transferred: Objective Modifications and Evaluation Choices in Frozen-Encoder Person–Job Fit"
+title: "Learned but Not Transferred: Evaluation Choices Outweigh Objective Modifications in Frozen-Encoder Person–Job Fit"
 authors:
-  - family-names: XX1
-    given-names: ""
-  - family-names: XX2
-    given-names: ""
-  - family-names: XX3
-    given-names: ""
+  - family-names: Bu
+    given-names: Lei
+  - family-names: Pan
+    given-names: Hong
+  - family-names: Di
+    given-names: Xiaoqiang
 year: 2027
 url: "https://github.com/codist1485/mita2027"
 preferred-citation:
   type: conference-paper
-  title: "Learned but Not Transferred: Objective Modifications and Evaluation Choices in Frozen-Encoder Person–Job Fit"
+  title: "Learned but Not Transferred: Evaluation Choices Outweigh Objective Modifications in Frozen-Encoder Person–Job Fit"
   authors:
-    - family-names: XX1
-    - family-names: XX2
-    - family-names: XX3
+    - family-names: Bu
+      given-names: Lei
+    - family-names: Pan
+      given-names: Hong
+    - family-names: Di
+      given-names: Xiaoqiang
   year: 2027
   conference:
     name: MiTA 2027

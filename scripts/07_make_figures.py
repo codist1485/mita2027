@@ -77,6 +77,20 @@ def main():
     plt.close(fig)
     print("wrote", figdir / "fig_dose.pdf")
     print("Note: fig_effects/fig_protocol require full factorial panels; see paper_v2 figures.")
+    # Optional: fig_seeds / fig_curves (need E1 histories + S0 metrics under repo results/)
+    try:
+        from scripts import make_fig_seeds_curves as _sfc  # type: ignore
+    except Exception:
+        _sfc = None
+    if _sfc is None:
+        # packaged script is flat under scripts/
+        import runpy
+        sfc = root / 'scripts' / 'make_fig_seeds_curves.py'
+        if sfc.is_file() and (root / 'results' / 'e1' / 'e1_analysis.json').is_file():
+            runpy.run_path(str(sfc), run_name='__main__')
+        else:
+            print('skip fig_seeds/fig_curves (E1 histories not in this package; PDFs shipped under figures/)')
+
 
 if __name__ == "__main__":
     main()

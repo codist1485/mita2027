@@ -1,0 +1,23 @@
+{
+  "written_utc": "2026-10-29T02:59:14.974241+00:00",
+  "prereg_commit": "bc49ebbaaf5091d796f7744894cf195fa9334885",
+  "n_test_pairs": 15407,
+  "job": {
+    "q33": 3.0,
+    "q66": 11.0,
+    "rule": "Low:h<=q33; Mid:q33<h<=q66; High:h>q66 (ties at cut -> lower)"
+  },
+  "user": {
+    "q33": 30.0,
+    "q66": 54.0,
+    "rule": "Low:h<=q33; Mid:q33<h<=q66; High:h>q66 (ties at cut -> lower)"
+  },
+  "job_hist_on_test_min_max": [
+    0,
+    210
+  ],
+  "user_hist_on_test_min_max": [
+    0,
+    250
+  ]
+}
