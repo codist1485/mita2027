@@ -1,8 +1,9 @@
 # MiTA 2027 — person–job fit controlled evaluation
 
 **Paper:** Learned but Not Transferred: Evaluation Choices Outweigh Objective Modifications in Frozen-Encoder Person--Job Fit  
-**Authors:** Lei Bu, Hong Pan, Xiaoqiang Di  
-**Venue year:** 2027  
+**Authors:** Lei Bu (Changchun University of Science and Technology; Yanbian University; bulei@cust.edu.cn), Hong Pan (Yanbian University; panhong@ybu.edu.cn), Xiaoqiang Di (corresponding; Changchun University of Science and Technology; dixiaoqiang@cust.edu.cn)  
+**Status:** Manuscript submitted to MiTA 2027 (2026)  
+
 
 ## Abstract
 
@@ -94,10 +95,10 @@ Code: MIT (see `LICENSE`). Data: Tianchi and RJDB terms apply; not redistributed
 ## Citation
 
 ```bibtex
-@inproceedings{mita2027pjf,
-  title={Learned but Not Transferred: Evaluation Choices Outweigh Objective Modifications in Frozen-Encoder Person--Job Fit},
-  author={Lei Bu and Hong Pan and Xiaoqiang Di},
-  year={2027},
-  booktitle={MiTA}
+@misc{mita2027pjf,
+  title  = {Learned but Not Transferred: Evaluation Choices Outweigh Objective Modifications in Frozen-Encoder Person--Job Fit},
+  author = {Lei Bu and Hong Pan and Xiaoqiang Di},
+  year   = {2026},
+  note   = {Manuscript submitted to MiTA 2027}
 }
 ```

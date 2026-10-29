@@ -1,17 +1,24 @@
 cff-version: 1.2.0
-message: If you use this software, please cite the paper.
+message: If you use this software, please cite the manuscript below.
+type: unpublished
 title: "Learned but Not Transferred: Evaluation Choices Outweigh Objective Modifications in Frozen-Encoder Person–Job Fit"
 authors:
   - family-names: Bu
     given-names: Lei
+    email: bulei@cust.edu.cn
+    affiliation: "Changchun University of Science and Technology; Yanbian University"
   - family-names: Pan
     given-names: Hong
+    email: panhong@ybu.edu.cn
+    affiliation: "Yanbian University"
   - family-names: Di
     given-names: Xiaoqiang
-year: 2027
+    email: dixiaoqiang@cust.edu.cn
+    affiliation: "Changchun University of Science and Technology"
+year: 2026
 url: "https://github.com/codist1485/mita2027"
 preferred-citation:
-  type: conference-paper
+  type: unpublished
   title: "Learned but Not Transferred: Evaluation Choices Outweigh Objective Modifications in Frozen-Encoder Person–Job Fit"
   authors:
     - family-names: Bu
@@ -20,6 +27,5 @@ preferred-citation:
       given-names: Hong
     - family-names: Di
       given-names: Xiaoqiang
-  year: 2027
-  conference:
-    name: MiTA 2027
+  year: 2026
+  notes: "Manuscript submitted to MiTA 2027"
